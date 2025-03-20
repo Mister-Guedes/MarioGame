@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 700px;
+    border-bottom: 50px solid #333;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s linear infinite;
+}
+
+.mario{
+    width: 100px;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 180px;
+    }
+    50% {
+        bottom: 180px;
+    }
+    60% {
+        bottom: 180px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.game-over-screen {
+    display: none; /* Começa invisível */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.486);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 50px;
+}
+
+.game-over-screen button {
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.game-over-screen button:hover {
+    background-color: darkred;
+}
